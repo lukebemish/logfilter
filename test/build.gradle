@@ -1,0 +1,17 @@
+plugins {
+    id 'dev.lukebemish.logfilter'
+}
+
+logfilter {
+    remove ~/^\[FILTER ME]/
+}
+
+println '[FILTER ME] This should not be logged.'
+println 'This should be logged.'
+
+tasks.register('testLogFilter') {
+    doLast {
+        println '[FILTER ME] This should not be logged.'
+        println 'This should be logged.'
+    }
+}

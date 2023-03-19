@@ -1,0 +1,26 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+group 'dev.lukebemish.logfilter'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.ow2.asm:asm-tree:9.4'
+    implementation 'commons-io:commons-io:2.11.0'
+}
+
+gradlePlugin {
+    plugins {
+        logfilter {
+            id = 'dev.lukebemish.logfilter'
+            implementationClass = 'dev.lukebemish.logfilter.LogFilterPlugin'
+        }
+    }
+}
