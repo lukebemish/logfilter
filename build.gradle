@@ -1,6 +1,7 @@
 plugins {
     id 'java-gradle-plugin'
     id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '1.1.0'
 }
 
 group 'dev.lukebemish.logfilter'
@@ -17,9 +18,13 @@ dependencies {
 }
 
 gradlePlugin {
+    website = 'https://github.com/lukebemish/logfilter'
+    vcsUrl = 'https://github.com/lukebemish/logfilter'
     plugins {
         logfilter {
             id = 'dev.lukebemish.logfilter'
+            displayName = 'Log Filter'
+            description = 'Modifies gradle wrapper to filter all logged messages'
             implementationClass = 'dev.lukebemish.logfilter.LogFilterPlugin'
         }
     }
