@@ -92,8 +92,9 @@ abstract public class JarModifier {
         remove.getParentFile().mkdirs();
         try (var writer = new BufferedWriter(new FileWriter(remove, false))) {
             for (String filter : task.getRemove().get()) {
+                writer.write("^.*?");
                 writer.write(filter);
-                writer.write("(.*$)");
+                writer.write(".*$");
                 writer.newLine();
             }
         }
