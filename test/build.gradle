@@ -3,15 +3,18 @@ plugins {
 }
 
 logfilter {
-    remove ~/^\[FILTER ME].*$/
+    removeLine(/\[FILTER ME].*/)
+    remove(/\[[A-Za-z ]+]/)
 }
 
-println '[FILTER ME] This should not be logged.'
 println 'This should be logged.'
+println '[FILTER ME] This should not be logged.'
+println '[FILTER ME] This should not be logged.'
+println 'This should be logged. [BUT THIS TAG SHOULD BE REMOVED]'
 
 tasks.register('testLogFilter') {
     doLast {
         println '[FILTER ME] This should not be logged.'
-        println 'This should be logged.'
+        println 'This should be logged. [BUT THIS TAG SHOULD BE REMOVED]'
     }
 }

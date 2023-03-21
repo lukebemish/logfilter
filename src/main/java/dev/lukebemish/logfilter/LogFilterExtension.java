@@ -12,7 +12,8 @@ abstract public class LogFilterExtension {
         getRemove().add(pattern);
     }
 
-    public void remove(Pattern pattern) {
-        getRemove().add(pattern.pattern());
+    public void removeLine(String pattern) {
+        Pattern.compile(pattern);
+        getRemove().add("^"+pattern+"$(\\n|\\r)*");
     }
 }

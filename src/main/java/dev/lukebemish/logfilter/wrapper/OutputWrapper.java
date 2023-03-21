@@ -14,7 +14,7 @@ import org.gradle.wrapper.GradleWrapperMain;
 public class OutputWrapper {
     public static void main(String[] args) throws Exception {
         List<Pattern> remove = new ArrayList<>();
-        try (var removeFile = OutputWrapper.class.getClassLoader().getResourceAsStream("META-INF/dev.lukebemish.logfilter/remove.txt")) {
+        try (var removeFile = OutputWrapper.class.getClassLoader().getResourceAsStream("META-INF/dev.lukebemish.logfilter/remove")) {
             if (removeFile == null) {
                 throw new RuntimeException("No missing regex filtering file");
             }

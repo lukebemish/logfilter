@@ -12,11 +12,12 @@ plugins {
 }
 
 logfilter {
-    remove ~/^\[FILTER ME].*$/
+    removeLine(/\[FILTER ME].*/)
+    remove(/\[[A-Za-z ]+]/)
 }
 
-println '[FILTER ME] This will not be logged.'
-println 'This will be logged.'
+println '[FILTER ME] This line will not be logged.'
+println 'This will be logged. [BUT THIS WILL BE REMOVED]'
 ```
 
 Then, you should regenerate your gradle wrapper:

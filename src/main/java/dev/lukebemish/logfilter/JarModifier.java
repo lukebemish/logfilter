@@ -88,7 +88,7 @@ abstract public class JarModifier {
     }
 
     static void writeFilter(WrapperCopyTask task, File directory) throws IOException {
-        var remove = new File(directory, "META-INF/dev.lukebemish.logfilter/remove.txt");
+        var remove = new File(directory, "META-INF/dev.lukebemish.logfilter/remove");
         remove.getParentFile().mkdirs();
         try (var writer = new BufferedWriter(new FileWriter(remove, false))) {
             for (String filter : task.getRemove().get()) {
