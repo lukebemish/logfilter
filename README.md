@@ -1,6 +1,6 @@
 # Log Filter
 
-[![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/io.github.lukebemish.brainfrick?style=for-the-badge)](https://plugins.gradle.org/plugin/io.github.lukebemish.brainfrick)
+[![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/dev.lukebemish.logfilter?style=for-the-badge)](https://plugins.gradle.org/plugin/dev.lukebemish.logfilter)
 
 This gradle plugin modifies the generated gradle wrapper to add log filtering; though generally there are better approaches to controlling logging, such as
 log levels, sometimes you must use libraries which log in ways that make it hard to filter the information you need from the mass of other information logged
